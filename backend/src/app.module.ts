@@ -5,6 +5,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { AnnouncementsModule } from './announcements/announcements.module';
+import { ActivitiesModule } from './activities/activities.module';
+import { DocumentsModule } from './documents/documents.module';
 import * as entities from './entities';
 
 @Module({
@@ -28,6 +31,9 @@ import * as entities from './entities';
     }),
     AuthModule,
     UsersModule,
+    AnnouncementsModule,
+    ActivitiesModule,
+    DocumentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
