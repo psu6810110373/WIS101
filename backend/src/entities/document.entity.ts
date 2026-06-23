@@ -14,12 +14,12 @@ export class Document {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
-  uploadedById: string;
+  @Column({ nullable: true })
+  uploadedById: string | null;
 
-  @ManyToOne(() => Teacher, (teacher) => teacher.documents)
+  @ManyToOne(() => Teacher, (teacher) => teacher.documents, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'uploadedById' })
-  teacher: Teacher;
+  teacher: Teacher | null;
 
   @Column()
   title: string;
