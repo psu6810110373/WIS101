@@ -4,16 +4,16 @@ import { Visibility } from '../../common/enums';
 export class CreateActivityDto {
   @IsString()
   @IsNotEmpty()
-  title: string;
+  title!: string;
 
   @IsString()
   @IsNotEmpty()
-  description: string;
+  description!: string;
 
   @IsDateString()
   @IsNotEmpty()
-  activityDate: string;
+  activityDate!: string;
 
   @IsEnum(Visibility)
-  visibility: Visibility;
+  visibility!: Visibility;
 }

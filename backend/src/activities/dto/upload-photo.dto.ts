@@ -3,8 +3,8 @@ import { GenderAccess, Visibility } from '../../common/enums';
 
 export class UploadPhotoDto {
   @IsEnum(GenderAccess)
-  genderAccess: GenderAccess;
+  genderAccess!: GenderAccess;
 
   @IsEnum(Visibility)
-  visibility: Visibility;
+  visibility!: Visibility;
 }
