@@ -4,22 +4,22 @@ import { Gender } from '../../common/enums';
 export class CreateStudentDto {
   @IsNotEmpty()
   @IsString()
-  studentCode: string;
+  studentCode!: string;
 
   @IsNotEmpty()
   @IsString()
-  fullName: string;
+  fullName!: string;
 
   @IsNotEmpty()
   @IsEnum(Gender)
-  gender: Gender;
+  gender!: Gender;
 
   @IsNotEmpty()
   @IsString()
-  classroom: string;
+  classroom!: string;
 
   @IsNotEmpty()
   @IsInt()
   @Min(1)
-  year: number;
+  year!: number;
 }

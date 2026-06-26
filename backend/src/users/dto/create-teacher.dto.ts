@@ -5,26 +5,26 @@ export class CreateTeacherDto {
   @IsNotEmpty()
   @IsString()
   @MinLength(4)
-  username: string;
+  username!: string;
 
   @IsNotEmpty()
   @IsString()
   @MinLength(6)
-  password: string;
+  password!: string;
 
   @IsNotEmpty()
   @IsString()
-  fullName: string;
+  fullName!: string;
 
   @IsNotEmpty()
   @IsString()
-  subject: string;
+  subject!: string;
 
   @IsNotEmpty()
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsNotEmpty()
   @IsEnum(Gender)
-  gender: Gender;
+  gender!: Gender;
 }

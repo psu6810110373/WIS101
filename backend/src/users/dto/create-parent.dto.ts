@@ -5,39 +5,39 @@ import { Gender } from '../../common/enums';
 export class StudentRelationDto {
   @IsNotEmpty()
   @IsUUID()
-  studentId: string;
+  studentId!: string;
 
   @IsNotEmpty()
   @IsString()
-  relationship: string;
+  relationship!: string;
 }
 
 export class CreateParentDto {
   @IsNotEmpty()
   @IsString()
   @MinLength(4)
-  username: string;
+  username!: string;
 
   @IsNotEmpty()
   @IsString()
   @MinLength(6)
-  password: string;
+  password!: string;
 
   @IsNotEmpty()
   @IsString()
-  fullName: string;
+  fullName!: string;
 
   @IsNotEmpty()
   @IsString()
-  phone: string;
+  phone!: string;
 
   @IsNotEmpty()
   @IsEnum(Gender)
-  gender: Gender;
+  gender!: Gender;
 
   @IsNotEmpty()
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => StudentRelationDto)
-  students: StudentRelationDto[];
+  students!: StudentRelationDto[];
 }
