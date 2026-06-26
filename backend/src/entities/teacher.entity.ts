@@ -12,24 +12,24 @@ import { Document } from './document.entity';
 @Entity('teachers')
 export class Teacher {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  userId: string;
+  userId!: string;
 
   @OneToOne(() => User, (user) => user.teacher)
   @JoinColumn({ name: 'userId' })
-  user: User;
+  user!: User;
 
   @Column()
-  fullName: string;
+  fullName!: string;
 
   @Column()
-  subject: string;
+  subject!: string;
 
   @Column({ unique: true })
-  email: string;
+  email!: string;
 
   @OneToMany(() => Document, (document) => document.teacher)
-  documents: Document[];
+  documents!: Document[];
 }

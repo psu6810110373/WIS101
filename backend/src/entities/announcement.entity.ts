@@ -9,26 +9,26 @@ import { Visibility } from '../common/enums';
 @Entity('announcements')
 export class Announcement {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  createdById: string;
+  createdById!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column('text')
-  content: string;
+  content!: string;
 
   @Column({
     type: 'enum',
     enum: Visibility,
   })
-  visibility: Visibility;
+  visibility!: Visibility;
 
   @CreateDateColumn()
-  publishedAt: Date;
+  publishedAt!: Date;
 
   @Column({ default: true })
-  isActive: boolean;
+  isActive!: boolean;
 }

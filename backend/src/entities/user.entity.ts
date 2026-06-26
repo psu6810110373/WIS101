@@ -13,38 +13,38 @@ import { Parent } from './parent.entity';
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
-  username: string;
+  username!: string;
 
   @Column()
-  passwordHash: string;
+  passwordHash!: string;
 
   @Column({
     type: 'enum',
     enum: UserRole,
   })
-  role: UserRole;
+  role!: UserRole;
 
   @Column({
     type: 'enum',
     enum: Gender,
   })
-  gender: Gender;
+  gender!: Gender;
 
   @Column({ default: true })
-  isActive: boolean;
+  isActive!: boolean;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @OneToOne(() => Admin, (admin) => admin.user)
-  admin: Admin;
+  admin!: Admin;
 
   @OneToOne(() => Teacher, (teacher) => teacher.user)
-  teacher: Teacher;
+  teacher!: Teacher;
 
   @OneToOne(() => Parent, (parent) => parent.user)
-  parent: Parent;
+  parent!: Parent;
 }

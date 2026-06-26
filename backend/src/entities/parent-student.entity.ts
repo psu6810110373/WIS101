@@ -5,19 +5,19 @@ import { Student } from './student.entity';
 @Entity('parent_students')
 export class ParentStudent {
   @PrimaryColumn()
-  parentId: string;
+  parentId!: string;
 
   @PrimaryColumn()
-  studentId: string;
+  studentId!: string;
 
   @Column()
-  relationship: string;
+  relationship!: string;
 
   @ManyToOne(() => Parent, (parent) => parent.parentStudents)
   @JoinColumn({ name: 'parentId' })
-  parent: Parent;
+  parent!: Parent;
 
   @ManyToOne(() => Student, (student) => student.parentStudents)
   @JoinColumn({ name: 'studentId' })
-  student: Student;
+  student!: Student;
 }

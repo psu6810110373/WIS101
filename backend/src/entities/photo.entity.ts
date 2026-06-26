@@ -12,30 +12,30 @@ import { Activity } from './activity.entity';
 @Entity('photos')
 export class Photo {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  activityId: string;
+  activityId!: string;
 
   @ManyToOne(() => Activity, (activity) => activity.photos)
   @JoinColumn({ name: 'activityId' })
-  activity: Activity;
+  activity!: Activity;
 
   @Column()
-  filePath: string;
+  filePath!: string;
 
   @Column({
     type: 'enum',
     enum: GenderAccess,
   })
-  genderAccess: GenderAccess;
+  genderAccess!: GenderAccess;
 
   @Column({
     type: 'enum',
     enum: Visibility,
   })
-  visibility: Visibility;
+  visibility!: Visibility;
 
   @CreateDateColumn()
-  uploadedAt: Date;
+  uploadedAt!: Date;
 }

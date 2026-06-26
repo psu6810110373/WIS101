@@ -5,26 +5,26 @@ import { ParentStudent } from './parent-student.entity';
 @Entity('students')
 export class Student {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
-  studentCode: string;
+  studentCode!: string;
 
   @Column()
-  fullName: string;
+  fullName!: string;
 
   @Column({
     type: 'enum',
     enum: Gender,
   })
-  gender: Gender;
+  gender!: Gender;
 
   @Column()
-  classroom: string;
+  classroom!: string;
 
   @Column()
-  year: number;
+  year!: number;
 
   @OneToMany(() => ParentStudent, (parentStudent) => parentStudent.student)
-  parentStudents: ParentStudent[];
+  parentStudents!: ParentStudent[];
 }

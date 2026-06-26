@@ -12,27 +12,27 @@ import { Teacher } from './teacher.entity';
 @Entity('documents')
 export class Document {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ nullable: true })
-  uploadedById: string | null;
+  uploadedById!: string | null;
 
   @ManyToOne(() => Teacher, (teacher) => teacher.documents, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'uploadedById' })
-  teacher: Teacher | null;
+  teacher!: Teacher | null;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column()
-  filePath: string;
+  filePath!: string;
 
   @Column({
     type: 'enum',
     enum: AccessRole,
   })
-  accessRole: AccessRole;
+  accessRole!: AccessRole;
 
   @CreateDateColumn()
-  uploadedAt: Date;
+  uploadedAt!: Date;
 }

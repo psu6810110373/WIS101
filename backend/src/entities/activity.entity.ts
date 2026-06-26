@@ -5,26 +5,26 @@ import { Photo } from './photo.entity';
 @Entity('activities')
 export class Activity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column()
-  createdById: string;
+  createdById!: string;
 
   @Column()
-  title: string;
+  title!: string;
 
   @Column('text')
-  description: string;
+  description!: string;
 
   @Column()
-  activityDate: Date;
+  activityDate!: Date;
 
   @Column({
     type: 'enum',
     enum: Visibility,
   })
-  visibility: Visibility;
+  visibility!: Visibility;
 
   @OneToMany(() => Photo, (photo) => photo.activity)
-  photos: Photo[];
+  photos!: Photo[];
 }
