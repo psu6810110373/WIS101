@@ -4,14 +4,14 @@ import { Visibility } from '../../common/enums';
 export class CreateAnnouncementDto {
   @IsString()
   @IsNotEmpty()
-  title: string;
+  title!: string;
 
   @IsString()
   @IsNotEmpty()
-  content: string;
+  content!: string;
 
   @IsEnum(Visibility)
-  visibility: Visibility;
+  visibility!: Visibility;
 
   @IsBoolean()
   @IsOptional()
